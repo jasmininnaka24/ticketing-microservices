@@ -17,3 +17,17 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
+          - path: /api/orders
+            pathType: Prefix
+            backend:
+              service:
+                name: order-srv
+                port:
+                  number: 3001
+          - path: /api/payment/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: payment-srv
+                port:
+                  number: 3002

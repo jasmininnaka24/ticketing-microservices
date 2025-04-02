@@ -15,3 +15,19 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
+    - image: innkjsmn/ticket-order
+      context: order
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: innkjsmn/ticket-payment
+      context: payment
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
